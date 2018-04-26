@@ -1,21 +1,20 @@
 const testNum = (number) => {
-
-  const promProm = new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     if (number >= 10) {
       resolve(`${number} is greater than 10. Success!`)
     } else {
       reject(`${number} is less than 10. Major Failure!`)
     }
   })
-  promProm.then(result => console.log(result))
-  promProm.catch(error => console.log(error))
+  .then(result => console.log(result))
+  .catch(error => console.log(error))
 }
 
 testNum(15) // 15 is greater than 10. Success!
 testNum(8) // 8 is less than 10. Major Failure!
 
 const makeAllCaps = (array) => {
-  const promProm = new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     const allStrings = array.every( word => {return typeof word === 'string'})
     if (allStrings) {
       const cappedNSorted = array.map(word => {return word.toUpperCase()}).sort()
@@ -24,8 +23,8 @@ const makeAllCaps = (array) => {
       reject(`Major Failure! Only Strings Allowed!`)
     }
   })
-  promProm.then(result => console.log(result))
-  promProm.catch(error => console.log(error))
+  .then(result => console.log(result))
+  .catch(error => console.log(error))
 }
 
 makeAllCaps(['wowow', 'pants', 'bird']) // [ 'BIRD', 'PANTS', 'WOWOW' ]
